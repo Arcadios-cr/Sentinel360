@@ -1,0 +1,78 @@
+[
+  {
+    "metrics": {
+      "mae": 0.01938995263139357,
+      "mse": 0.0005287662184897381,
+      "rmse": 0.022994917231634868,
+      "r2": 0.9998953390775436
+    },
+    "performance_drift": {
+      "baseline_rmse": 0.5,
+      "current_rmse": 0.022994917231634868,
+      "ratio": 0.045989834463269735,
+      "delta": -0.4770050827683651,
+      "severity": "low",
+      "drift_detected": false,
+      "reason": "performance stable"
+    },
+    "score": 100,
+    "timestamp": "2026-03-08T15:35:16.761328Z"
+  },
+  {
+    "metrics": {
+      "mae": 0.023064886485531594,
+      "mse": 0.0007548994682049202,
+      "rmse": 0.02747543390385164,
+      "r2": 0.9998588627095363
+    },
+    "performance_drift": {
+      "baseline_rmse": 0.5,
+      "current_rmse": 0.02747543390385164,
+      "ratio": 0.05495086780770328,
+      "delta": -0.47252456609614835,
+      "severity": "low",
+      "drift_detected": false,
+      "reason": "performance stable"
+    },
+    "score": 100,
+    "timestamp": "2026-03-08T15:47:30.089161Z"
+  },
+  {
+    "metrics": {
+      "mae": 0.009208030912748688,
+      "mse": 9.596917029951906e-05,
+      "rmse": 0.009796385573236645,
+      "r2": 0.9999092540386746
+    },
+    "performance_drift": {
+      "baseline_rmse": 0.5,
+      "current_rmse": 0.009796385573236645,
+      "ratio": 0.01959277114647329,
+      "delta": -0.49020361442676336,
+      "severity": "low",
+      "drift_detected": false,
+      "reason": "performance stable"
+    },
+    "score": 100,
+    "timestamp": "2026-03-08T15:47:36.735707Z"
+  },
+  {
+    "metrics": {
+      "mae": 0.01938995263139357,
+      "mse": 0.0005287662184897381,
+      "rmse": 0.022994917231634868,
+      "r2": 0.9998953390775436
+    },
+    "performance_drift": {
+      "baseline_rmse": 0.5,
+      "current_rmse": 0.022994917231634868,
+      "ratio": 0.045989834463269735,
+      "delta": -0.4770050827683651,
+      "severity": "low",
+      "drift_detected": false,
+      "reason": "performance stable"
+    },
+    "score": 100,
+    "timestamp": "2026-03-08T15:47:51.418472Z"
+  }
+]

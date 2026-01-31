@@ -1,0 +1,40 @@
+[
+  {
+    "metrics": {
+      "mae": 0.775,
+      "mse": 0.6225,
+      "rmse": 0.788986691902975,
+      "r2": 0.502
+    },
+    "performance_drift": {
+      "baseline_rmse": 0.5,
+      "current_rmse": 0.788986691902975,
+      "ratio": 1.57797338380595,
+      "delta": 0.288986691902975,
+      "severity": "high",
+      "drift_detected": true,
+      "reason": "dégradation forte de performance"
+    },
+    "score": 47,
+    "timestamp": "2026-02-01T14:30:36.240633Z"
+  },
+  {
+    "metrics": {
+      "mae": 0.65,
+      "mse": 0.5049999999999999,
+      "rmse": 0.7106335201775947,
+      "r2": 0.5960000000000001
+    },
+    "performance_drift": {
+      "baseline_rmse": 0.5,
+      "current_rmse": 0.7106335201775947,
+      "ratio": 1.4212670403551895,
+      "delta": 0.21063352017759474,
+      "severity": "high",
+      "drift_detected": true,
+      "reason": "dégradation forte de performance"
+    },
+    "score": 57,
+    "timestamp": "2026-02-01T14:30:40.829900Z"
+  }
+]

@@ -1,0 +1,40 @@
+[
+  {
+    "metrics": {
+      "mae": 0.1250000000000001,
+      "mse": 0.01750000000000003,
+      "rmse": 0.13228756555322965,
+      "r2": 0.986
+    },
+    "performance_drift": {
+      "baseline_rmse": 0.5,
+      "current_rmse": 0.13228756555322965,
+      "ratio": 0.2645751311064593,
+      "delta": -0.3677124344467704,
+      "severity": "low",
+      "drift_detected": false,
+      "reason": "performance stable"
+    },
+    "score": 100,
+    "timestamp": "2026-02-01T14:27:43.027844Z"
+  },
+  {
+    "metrics": {
+      "mae": 0.1250000000000001,
+      "mse": 0.01750000000000003,
+      "rmse": 0.13228756555322965,
+      "r2": 0.986
+    },
+    "performance_drift": {
+      "baseline_rmse": 0.5,
+      "current_rmse": 0.13228756555322965,
+      "ratio": 0.2645751311064593,
+      "delta": -0.3677124344467704,
+      "severity": "low",
+      "drift_detected": false,
+      "reason": "performance stable"
+    },
+    "score": 100,
+    "timestamp": "2026-02-01T14:27:47.885319Z"
+  }
+]

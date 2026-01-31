@@ -1,0 +1,20 @@
+[
+  {
+    "schedule_id": "sched_test_model_20260201154717694544",
+    "model_id": "test_model",
+    "interval_minutes": 60,
+    "y_true": [
+      1.0
+    ],
+    "y_pred": [
+      1.0
+    ],
+    "baseline_rmse": null,
+    "status": "completed",
+    "created_at": "2026-02-01T14:47:17.694552Z",
+    "last_run": "2026-02-01T14:47:17.694938Z",
+    "next_run": "2026-02-01T15:47:17.694938Z",
+    "run_count": 2,
+    "max_runs": 2
+  }
+]
