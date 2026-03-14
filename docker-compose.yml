@@ -1,0 +1,111 @@
+# =============================================================================
+# Sentinel360 - Docker Compose
+# Orchestration des services pour le déploiement
+# =============================================================================
+
+services:
+  # ===========================================================================
+  # Service API Principal
+  # ===========================================================================
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: sentinel360-api
+    image: sentinel360:latest
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=production
+      - LOG_LEVEL=info
+    volumes:
+      - sentinel-data:/app/app/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
+    networks:
+      - sentinel-network
+
+  # ===========================================================================
+  # Dashboard Streamlit (F5-UC3)
+  # ===========================================================================
+  dashboard:
+    build:
+      context: ./dashboard
+      dockerfile: Dockerfile
+    container_name: sentinel360-dashboard
+    image: sentinel360-dashboard:latest
+    ports:
+      - "8501:8501"
+    environment:
+      - API_BASE_URL=http://api:8000
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - sentinel-network
+
+  # ===========================================================================
+  # Service API en mode développement (avec hot-reload)
+  # ===========================================================================
+  api-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    container_name: sentinel360-api-dev
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=development
+      - LOG_LEVEL=debug
+    volumes:
+      # Montage du code source pour hot-reload
+      - ./app:/app/app:ro
+      - ./tests:/app/tests:ro
+    restart: unless-stopped
+    networks:
+      - sentinel-network
+    profiles:
+      - dev
+
+  # ===========================================================================
+  # Service de tests
+  # ===========================================================================
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    container_name: sentinel360-tests
+    command: ["pytest", "tests/", "-v", "--tb=short"]
+    environment:
+      - ENVIRONMENT=test
+    volumes:
+      - ./tests:/app/tests:ro
+      - ./app:/app/app:ro
+    networks:
+      - sentinel-network
+    profiles:
+      - test
+
+# =============================================================================
+# Volumes persistants
+# =============================================================================
+volumes:
+  sentinel-data:
+    name: sentinel360-data
+
+# =============================================================================
+# Réseaux
+# =============================================================================
+networks:
+  sentinel-network:
+    driver: bridge
+    name: sentinel360-network
